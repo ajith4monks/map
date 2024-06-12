@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Leaflet Map with Custom Markers</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+      }
+      #map {
+        height: 100vh;
+        flex: 1;
+      }
+      #countries {
+        ::outline {
+          line-color: #000000;
+          line-width: 2;
+          line-join: round;
+        }
+        polygon-fill: #ffce0c;
+      }
+      .sidebar {
+        width: 300px;
+        height: 100vh;
+        background-color: white;
+        overflow-y: auto;
+        display: none;
+        padding: 20px;
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+      }
+
+      .leaflet-container {
+        background-color: #d4dadc;
+      }
+      .marker-btns {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        z-index: 1000;
+      }
+      .marker-btn {
+        margin: 5px;
+        padding: 10px;
+        background-color: white;
+        border: 1px solid #ccc;
+        cursor: pointer;
+      }
+      .fade {
+        opacity: 0.2;
+        transition: opacity 0.3s ease;
+      }
+      .label {
+        padding: 2px 5px;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        min-width: auto;
+        max-width: 15ch;
+        width: max-content;
+        text-align: left;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <div class="sidebar" id="sidebar-marker-0">
+      slider_1
+      <button class="marker-btn" onclick="highlightMarker(5)">prev</button>
+      <button class="marker-btn" onclick="highlightMarker(1)">next</button>
+    </div>
+    <div class="sidebar" id="sidebar-marker-1">
+      slider_2
+      <button class="marker-btn" onclick="highlightMarker(0)">prev</button>
+      <button class="marker-btn" onclick="highlightMarker(2)">next</button>
+    </div>
+    <div class="sidebar" id="sidebar-marker-2">
+      slider_3
+      <button class="marker-btn" onclick="highlightMarker(1)">prev</button>
+      <button class="marker-btn" onclick="highlightMarker(3)">next</button>
+    </div>
+    <div class="sidebar" id="sidebar-marker-3">
+      slider_4
+      <button class="marker-btn" onclick="highlightMarker(2)">prev</button>
+      <button class="marker-btn" onclick="highlightMarker(4)">next</button>
+    </div>
+    <div class="sidebar" id="sidebar-marker-4">
+      slider_5
+      <button class="marker-btn" onclick="highlightMarker(3)">prev</button>
+      <button class="marker-btn" onclick="highlightMarker(5)">next</button>
+    </div>
+    <div class="sidebar" id="sidebar-marker-5">
+      slider_6
+      <button class="marker-btn" onclick="highlightMarker(4)">prev</button>
+      <button class="marker-btn" onclick="highlightMarker(0)">next</button>
+    </div>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://leafletjs.com/examples/choropleth/us-states.js"></script>
+    <script src="map.js"></script>
+  </body>
+</html>
